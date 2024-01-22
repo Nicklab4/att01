@@ -11,6 +11,7 @@
 
 
 // Метод ввода данных
+// На вход подаётся строка, она разбивается и выводится массив срок 
 string[] ReadData(string msg)
 {
     System.Console.WriteLine(msg);
@@ -18,14 +19,25 @@ string[] ReadData(string msg)
     return array;
 }
 
+// Метод обработки данных
+string[] SortString(string[] array, int numChar)
+{
+
+    return array;
+}
+
 // Метод вывода результата
+// На вход подаётся массив строк, который выводится на консоль в форматированном виде
 void PrintRezult(string[] array)
 {
+
+    // Если массив пустой выводится пустое значение и прерывается выполнение метода
     if (array.Length == 0) {
         System.Console.WriteLine("[]");
         break;
     }
     
+    // Формирование форматированного вывода
     System.Console.Write("[\"");
     for (int i = 0; i < array.Length; i++)
     {
@@ -41,7 +53,6 @@ void PrintRezult(string[] array)
 /// Тело программы
 //////////////////////////////////////////////////////////////
 
-int m = ReadData("Введите число M : ");
-int n = ReadData("Введите число N : ");
+string[] array = ReadData("Введите массив строк через запятую: ");
 
-PrintRezult(array2);
+PrintRezult(SortString(array, 3));
