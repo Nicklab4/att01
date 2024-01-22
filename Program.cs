@@ -1,3 +1,15 @@
+// Задача:
+// Написать программу, которая из имеющегося массива строк формирует новый массив из строк,
+// длина которых меньше, либо равна 3 символам.
+// Первоначальный массив можно ввести с клавиатуры, либо задать на старте выполнения алгоритма.
+// При решении не рекомендуется пользоваться коллекциями, лучше обойтись исключительно массивами.
+
+// Примеры:
+// [“Hello”, “2”, “world”, “:-)”] → [“2”, “:-)”]
+// [“1234”, “1567”, “-2”, “computer science”] → [“-2”]
+// [“Russia”, “Denmark”, “Kazan”] → []
+
+
 // Метод ввода данных
 string[] ReadData(string msg)
 {
@@ -7,9 +19,21 @@ string[] ReadData(string msg)
 }
 
 // Метод вывода результата
-void PrintRezult(string msg)
+void PrintRezult(string[] array)
 {
-    System.Console.WriteLine(msg);
+    if (array.Length == 0) {
+        System.Console.WriteLine("[]");
+        break;
+    }
+    
+    System.Console.Write("[\"");
+    for (int i = 0; i < array.Length; i++)
+    {
+        System.Console.Write(array[i]);
+        if (i < array.Length - 1)
+            System.Console.Write("\", \"");
+    }
+    System.Console.Write("\"]");
 }
 
 
@@ -20,4 +44,4 @@ void PrintRezult(string msg)
 int m = ReadData("Введите число M : ");
 int n = ReadData("Введите число N : ");
 
-PrintRezult("M = " + m + ", N = " + n + ", -> " + SumNumRec(m, n));
+PrintRezult(array2);
