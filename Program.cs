@@ -15,7 +15,7 @@
 string[] ReadData(string msg)
 {
     System.Console.WriteLine(msg);
-    string[] = Console.ReadLine().Split(',');
+    string[] array = Console.ReadLine().Split(',');
     return array;
 }
 
@@ -26,7 +26,7 @@ string[] SortString(string[] array, int numChar)
     // Подсчёт количества элементов соответствующих условию
     for (int i = 0; i < array.Length; i++)
     {
-        if (array.Length <= numChar)
+        if (array[i].Length <= numChar)
             count++;
     }
     
@@ -39,7 +39,7 @@ string[] SortString(string[] array, int numChar)
     // Заполнение нового массива в соответствии с условием
     for (int i = 0; i < array.Length; i++)
     {
-        if (array.Length <= numChar){
+        if (array[i].Length <= numChar){
             array2[count] = array[i];
             count++;
         }
@@ -56,7 +56,7 @@ void PrintRezult(string[] array)
     // Если массив пустой выводится пустое значение и прерывается выполнение метода
     if (array.Length == 0) {
         System.Console.WriteLine("[]");
-        break;
+        return;
     }
     
     // Формирование форматированного вывода
